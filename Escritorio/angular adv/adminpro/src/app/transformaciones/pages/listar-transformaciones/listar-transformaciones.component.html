@@ -1,0 +1,59 @@
+<div class="row animate__animated animate__fadeIn">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+          <input type="text" class="form-control" placeholder="Buscar agentes" #input>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="row animate__animated animate__fadeIn">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+          <div class="d-flex justify-between mb-3">
+            <h3 class="card-title">
+              Transformaciones Registradas (<small>{{ totalRegistro }}</small>)
+            </h3>
+            <button class="btn btn-primary btn-rounded" [routerLink]="['/transformacion', 'create' ]">
+              <i class="fa fa-plus"></i>Crear Transformacion
+            </button>
+          </div>
+  
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>Nro Resolución</th>
+                <th>Resultado Transformacion</th>
+                <th class="text-center">Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor= "let item of transformaciones" >
+                <td >
+                  <div role="button" style="cursor: pointer;">
+                     {{ item.numeroResolucion }} 
+                  </div>
+                </td>
+                <td>
+                     {{ item.resultadoTransformacion }} 
+                </td>
+               
+                <th class="d-flex justify-content-center">
+                  <button class="btn btn-primary mr-3" [routerLink]="['/transformacion', item.id]">
+                    <i class="fa fa-pencil-square-o"></i>
+                  </button>
+                  <button class="btn btn-danger">
+                    <i class="fa fa-trash-o"></i>
+                  </button>
+                </th>
+              </tr>
+            </tbody>
+          </table>
+  
+  
+        </div>
+      </div>
+    </div>
+  </div>
