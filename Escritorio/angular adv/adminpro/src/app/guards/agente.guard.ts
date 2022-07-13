@@ -26,7 +26,7 @@ export class AgenteGuard implements CanActivate {
       !this.tokenService.isLogged() ||
       expectedRol.indexOf(this.realRol) < 0
     ) {
-      this.router.navigate(['/']);
+      this.router.navigate(['/page']);
       return false;
     }
 

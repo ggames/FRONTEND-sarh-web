@@ -16,8 +16,8 @@ export class TokenService {
     window.localStorage.setItem(TOKEN_KEY, token);
   }
 
-  public getToken(): string | null {
-    return window.localStorage.getItem(TOKEN_KEY);
+  public getToken(): string {
+    return window.localStorage.getItem(TOKEN_KEY) || '';
   }
 
   public getUserName(): string | null {

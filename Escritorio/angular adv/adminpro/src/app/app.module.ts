@@ -2,7 +2,6 @@ import { LoginComponent } from './auth/pages/login/login.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-import { ToastContainerModule, ToastrModule } from 'ngx-toastr';
 
 // ************ RUTAS **************************
 
