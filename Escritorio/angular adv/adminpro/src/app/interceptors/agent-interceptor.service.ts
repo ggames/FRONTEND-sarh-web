@@ -29,6 +29,8 @@ export class AgentInterceptorService implements HttpInterceptor {
     req: HttpRequest<any>,
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
+    console.log('ENTRO EN EL INTERCEPTOR');
+
     if (!this.tokenService.isLogged()) {
       return next.handle(req);
     }
@@ -44,7 +46,7 @@ export class AgentInterceptorService implements HttpInterceptor {
           const dto: JwtDTO = new JwtDTO(this.tokenService.getToken());
           return this.authService.refresh(dto).pipe(
             concatMap((data: any) => {
-              console.log('refreshing....');
+              console.log('refreshing....' + data.token);
               this.tokenService.setToken(data.token);
               intReq = this.addToken(req, data.token);
               return next.handle(intReq);

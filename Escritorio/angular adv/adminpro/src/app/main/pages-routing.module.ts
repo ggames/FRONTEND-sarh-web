@@ -1,5 +1,7 @@
+import { NuevoAgenteComponent } from './../agentes/pages/nuevo-agente/nuevo-agente.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ListarAgenteComponent } from '../agentes/pages/listar-agente/listar-agente.component';
 
 const routes: Routes = [
   {
@@ -13,6 +15,12 @@ const routes: Routes = [
     loadChildren: () =>
       import('./../agentes/agentes.module').then((m) => m.AgentesModule),
   },
+  {
+    path: 'puntos',
+    loadChildren: () =>
+      import('./../puntos/puntos.module').then((m) => m.PuntosModule),
+  },
+
   {
     path: 'transformacion',
     loadChildren: () =>

@@ -6,6 +6,7 @@ export const environment = {
   production: false,
   agenteURL: 'http://localhost:8080/agentes/',
   authURL: 'http://localhost:8080/auth/',
+  puntoURL: 'http://localhost:8080/puntos/',
 };
 
 /*

@@ -1,12 +1,19 @@
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { PagesRoutingModule } from './pages-routing.module';
-import { NuevoAgenteComponent } from '../agentes/pages/nuevo-agente/nuevo-agente.component';
 
 @NgModule({
   declarations: [],
-  imports: [CommonModule, PagesRoutingModule],
+  imports: [
+    CommonModule,
+    PagesRoutingModule,
+    FormsModule,
+    NgbModule,
+    ReactiveFormsModule,
+  ],
   exports: [],
 })
 export class PagesModule {}
